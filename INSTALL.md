@@ -5,117 +5,38 @@
 * PostgreSQL
 * Elasticsearch
 * Redis
-* Ruby version 2.3.0
-* Rails
+* Ruby version 2.4.0
+* Rails version 4.2.8
 
 # Lets Get Started!
 
 **1. Install Homebrew**
-
-Homebrew allows us to install and compile software packages easily from source.
-
-Run the following command in the Terminal. When it asks you to install Xcode CommandLine Tools, say yes
-
-```ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”```
-
 **2. Instal Ruby**
-
-```
-brew install rbenv ruby-build
-```
-
-Add rbenv to bash so that it loads every time you open a Terminal
-
-```
-echo ‘if which rbenv > /dev/null; then eval “$(rbenv init -)”; fi’ >> ~/.bash_profile
-source ~/.bash_profile
-```
-
-Install Ruby 2.3.0 which is required by the app:
-
-```
-rbenv install 2.3.0
-rbenv global 2.3.0
-ruby -v
-```
-
 **3. Install Rails**
-
-Installing Rails is really simple:
-
-```
-gem install rails -v 4.2.4
-rbenv rehash
-rails -v
-```
-
-
 **4. Install PostgreSQL**
-
 ```
 brew install postgresql
 ```
-
-Make sure to follow those instructions of the build notes.
-
-If your installing PostgreSQL for the first time create a database:
-
+**5. Install Elasticsearch ImageMagick**
 ```
-initdb /usr/local/var/postgres -E utf8
+brew install elasticsearch
+brew install imagemagick
 ```
-
-Lunchy is a helpful gem that will allow you to easily start and stop Postgres.
-
-```
-gem install lunchy
-```
-
-Change the version number of PostgreSQL to the version that you installed:
-
-```
-mkdir -p ~/Library/LaunchAgents
-cp /usr/local/Cellar/postgresql/0.0.0/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
-```
-
-To Stop PostgreSQL run:
-```
-lunchy stop postgres
-```
-
-We want it to start PostgreSQL, so instead run:
-```
-lunchy start postgres
-```
-
-
-**5. Install Elasticsearch**
-
-Where would we be without search? The app uses ElasticSearch 1.7.3 which is a search server - quite simply it’s going to help you find posts and users in the app.
-
-```
-brew install elasticsearch17
-```
-
-Start Elasticsearch:
-```
-elasticsearch --config=/usr/local/opt/elasticsearch17/config/elasticsearch.yml
-```
-
 Lets check it is running by visiting [http://localhost:9200](http://localhost:9200) in your browser. You should get something like this:
 
 ```
 {
-  “status” : 200,
-  “name” : “Atalanta”,
-  “cluster_name” : “elasticsearch_kenhibino”,
-  “version” : {
-    “number” : “1.7.3”,
-    “build_hash” : “05d4530971ef0ea46d0f4fa6ee64dbc8df659682”,
-    “build_timestamp” : “2015-10-15T09:14:17Z”,
-    “build_snapshot” : false,
-    “lucene_version” : “4.10.4”
+  name: "vIdZLoB",
+  cluster_name: "elasticsearch_leslie",
+  cluster_uuid: "gjNSHv2jSuO5foO-0R663w",
+  version:  {
+    number: "5.4.0",
+    build_hash: "780f8c4",
+    build_date: "2017-04-28T17:43:27.229Z",
+    build_snapshot: false,
+    lucene_version: "6.5.0"
   },
-  “tagline” : “You Know, for Search”
+  tagline: "You Know, for Search"
 }
 ```
 
@@ -125,9 +46,7 @@ Using Homebrew install Redis and then start the server:
 
 ```
 brew install redis
-redis-server
 ```
-
 **7. Clone the app**
 
 Browse to where you want the app to live and clone app:

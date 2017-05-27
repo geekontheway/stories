@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.assign_attributes(post_params)
+    @post.update_attributes!(post_params)
     if @post.publish
       redirect_to @post, notice: "Successfully published the post!"
     else
